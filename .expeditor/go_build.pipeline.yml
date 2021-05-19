@@ -1,0 +1,28 @@
+steps:
+  - label: ":go: build"
+    command: build --rm-dist --skip-validate
+    plugins:
+      - docker#v3.7.0:
+          image: goreleaser/goreleaser
+          always-pull: true
+          shell: false
+      - artifacts#v1.3.0:
+          upload: dist/**/*
+
+  - wait
+
+  - label: ":artifactory: upload"
+    command: .expeditor/artifact_upload.sh
+    expeditor:
+      secrets:
+        ARTIFACTORY_TOKEN:
+          path: account/static/artifactory/buildkite
+          field: token
+    plugins:
+      - artifacts#v1.3.0:
+          download: dist/**/*
+      - docker#v3.7.0:
+          image: chefes/buildkite
+          environment:
+            - ARTIFACTORY_TOKEN
+            - JFROG_CLI_OFFER_CONFIG=false

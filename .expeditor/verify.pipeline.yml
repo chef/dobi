@@ -1,0 +1,13 @@
+steps:
+  - label: ":go: lint"
+    command: golangci-lint run
+    expeditor:
+      executor:
+        docker:
+          image: golangci/golangci-lint:latest
+
+  - label: ":go: linux"
+    command: go test ./...
+    expeditor:
+      executor:
+        docker:
