@@ -1,0 +1,20 @@
+before:
+  hooks:
+    - go mod vendor
+    - go generate ./
+    - go install .
+builds:
+  - id: "dobi"
+    binary: dobi
+    main: main.go
+    ldflags:
+      - -X github.com/dnephin/dobi/cmd.gitsha={{.Commit}} -X "github.com/dnephin/dobi/cmd.buildDate={{.Date}}" -X github.com/dnephin/dobi/cmd.version={{.Version}}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
