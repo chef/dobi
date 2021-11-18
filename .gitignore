@@ -7,3 +7,6 @@ docs/doctrees
 _results/
 .depsources/
 github.token
+go-binaries
+dobi_*.tar.gz
+dobi_*.zip
