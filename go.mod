@@ -24,7 +24,7 @@ require (
 	github.com/spf13/cobra v0.0.2-0.20171109065643-2da4a54c5cee
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v0.0.0-20170224212429-dcecefd839c4
-	golang.org/x/crypto v0.0.0-20200220183623-bac4c82f6975
+	golang.org/x/crypto v0.1.0
 	golang.org/x/time v0.0.0-20170927054726-6dc17368e09b // indirect
 	gopkg.in/yaml.v2 v2.2.2
 	gotest.tools/v3 v3.0.2
