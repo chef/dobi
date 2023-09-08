@@ -12,14 +12,14 @@ require (
 	github.com/fsouza/go-dockerclient v1.6.4
 	github.com/gogits/git-module v0.0.0-20170608205522-1de103dca47a
 	github.com/golang/mock v1.1.1
-	github.com/google/go-cmp v0.4.0
+	github.com/google/go-cmp v0.5.5
 	github.com/kballard/go-shellquote v0.0.0-20170619183022-cd60e84ee657
 	github.com/mcuadros/go-version v0.0.0-20161105183618-257f7b9a7d87 // indirect
 	github.com/metakeule/fmtdate v1.1.2-0.20150502212323-427373e7d2f8
-	github.com/opencontainers/runc v1.0.0-rc3.0.20170716065720-825b5c020ace // indirect
+	github.com/opencontainers/runc v1.1.5 // indirect
 	github.com/pkg/errors v0.8.1
 	github.com/renstrom/dedent v1.0.1-0.20150819195903-020d11c3b9c0
-	github.com/sirupsen/logrus v1.4.1
+	github.com/sirupsen/logrus v1.8.1
 	github.com/smartystreets/goconvey v1.6.4 // indirect
 	github.com/spf13/cobra v0.0.2-0.20171109065643-2da4a54c5cee
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
