@@ -8,7 +8,7 @@ import (
 	"github.com/dnephin/configtf"
 	pth "github.com/dnephin/configtf/path"
 	shlex "github.com/kballard/go-shellquote"
-	"golang.org/x/term"
+	"golang.org/x/crypto/ssh/terminal"
 )
 
 // JobConfig A **job** resource uses an `image`_ to run a job in a container.
