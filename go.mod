@@ -159,7 +159,7 @@ require (
 	github.com/coreos/go-systemd/v22 v22.5.0 // indirect
 	github.com/dnephin/configtf v0.0.0-20161020003418-6b0d1fdf5e68
 	github.com/dnephin/go-os-user v0.0.0-20161029070903-44e2994deb1e
-	github.com/docker/cli v24.0.4+incompatible
+	github.com/docker/cli v24.0.7+incompatible
 	github.com/docker/distribution v2.8.2+incompatible // indirect
 	github.com/docker/docker v20.10.19+incompatible
 	github.com/docker/docker-credential-helpers v0.7.0 // indirect

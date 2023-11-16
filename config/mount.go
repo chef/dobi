@@ -11,19 +11,18 @@ import (
 // MountConfig A **mount** resource creates a host bind mount or named volume
 // mount.
 // name: mount
-// example: A mount named ``source`` that mounts the current host directory as
-// ``/app/code`` in the container.
+// example: A mount named “source“ that mounts the current host directory as
+// “/app/code“ in the container.
 //
 // .. code-block:: yaml
 //
-//     mount=source:
-//         bind: .
-//         path: /app/code
+//	mount=source:
+//	    bind: .
+//	    path: /app/code
 //
-//     mount=named:
-//         name: app-data
-//         path: /data
-//
+//	mount=named:
+//	    name: app-data
+//	    path: /data
 type MountConfig struct {
 	// Bind The host path to create and mount. This field supports expansion of
 	// `~` to the current users home directory.

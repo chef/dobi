@@ -22,13 +22,12 @@ import (
 //
 // .. code-block:: yaml
 //
-//     image=project-dev:
-//         image: myproject-dev
-//         context: .
-//         args:
-//           version: '3.1.4'
-//           url: http://example.com/foo
-//
+//	image=project-dev:
+//	    image: myproject-dev
+//	    context: .
+//	    args:
+//	      version: '3.1.4'
+//	      url: http://example.com/foo
 type ImageConfig struct {
 	// Image The name of the **image** without a tag. Tags must be specified
 	// in the **tags** field. This field supports :doc:`variables`.
