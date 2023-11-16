@@ -11,28 +11,28 @@ linters-settings:
 linters:
   disable-all: true
   enable:
-    - deadcode
+    # - deadcode
     - goconst
     - gocyclo
     - gofmt
     - goimports
-    - golint
+    # - golint
     - gosimple
     - ineffassign
-    - interfacer
+    # - interfacer
     - errcheck
     - lll
     - megacheck
     - misspell
-    - structcheck
+    # - structcheck
     - unconvert
     - unparam
     - unused
-    - varcheck
+    # - varcheck
     - vet
 
 issues:
   exclude-rules:
     - path: tasks/image/tag_test\.go
       linters:
-        - interfacer
+        - unused
