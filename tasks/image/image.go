@@ -10,7 +10,7 @@ import (
 	"github.com/dnephin/dobi/tasks/task"
 	"github.com/dnephin/dobi/tasks/types"
 	"github.com/docker/docker/pkg/jsonmessage"
-	"github.com/docker/docker/pkg/term"
+	"github.com/moby/term"
 	docker "github.com/fsouza/go-dockerclient"
 	log "github.com/sirupsen/logrus"
 )

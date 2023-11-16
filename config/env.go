@@ -11,13 +11,13 @@ import (
 // EnvConfig An **env** resource provides environment variables to **job** and
 // **compose** resources.
 //
-// example: Define some variables for a ``job``
+// example: Define some variables for a “job“
 //
 // .. code-block:: yaml
 //
-//     env=settings:
-//         files: [local.env]
-//         variables: [PORT=3838, HOST=stage]
+//	env=settings:
+//	    files: [local.env]
+//	    variables: [PORT=3838, HOST=stage]
 //
 // name: env
 type EnvConfig struct {

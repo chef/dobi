@@ -20,7 +20,7 @@ import (
 	"github.com/dnephin/dobi/tasks/task"
 	"github.com/dnephin/dobi/tasks/types"
 	"github.com/dnephin/dobi/utils/fs"
-	"github.com/docker/docker/pkg/term"
+	"github.com/moby/term"
 	"github.com/docker/go-connections/nat"
 	docker "github.com/fsouza/go-dockerclient"
 	log "github.com/sirupsen/logrus"

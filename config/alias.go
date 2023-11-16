@@ -14,8 +14,8 @@ import (
 //
 // .. code-block:: yaml
 //
-//     alias=test
-//         tasks: [test-unit, test-integration, test-acceptance]
+//	alias=test
+//	    tasks: [test-unit, test-integration, test-acceptance]
 //
 // name: alias
 type AliasConfig struct {
