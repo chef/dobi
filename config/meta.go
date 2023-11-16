@@ -8,15 +8,14 @@ import (
 
 // MetaConfig Configure **dobi** and include other config files.
 // name: meta
-// example: Set the the project name to ``mywebapp`` and run the ``all`` task by
+// example: Set the the project name to “mywebapp“ and run the “all“ task by
 // default.
 //
 // .. code-block:: yaml
 //
-//     meta:
-//         project: mywebapp
-//         default: all
-//
+//	meta:
+//	    project: mywebapp
+//	    default: all
 type MetaConfig struct {
 	// Default The name of a task from the ``dobi.yml`` to run when no
 	// task name is specified on the command line.

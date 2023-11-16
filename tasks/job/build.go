@@ -307,7 +307,7 @@ func createFromTar(tarReader io.Reader, header *tar.Header, path artifactPath) e
 		logging.Log.Debugf("Creating dir %s", hostPath)
 		return os.MkdirAll(hostPath, fileMode)
 
-	case tar.TypeReg, tar.TypeRegA:
+	case tar.TypeReg:
 		logging.Log.Debugf("Creating file %s", hostPath)
 		if err := os.MkdirAll(filepath.Dir(hostPath), 0755); err != nil {
 			return err

@@ -8,39 +8,38 @@ import (
 	"github.com/dnephin/configtf"
 	pth "github.com/dnephin/configtf/path"
 	shlex "github.com/kballard/go-shellquote"
-	"golang.org/x/crypto/ssh/terminal"
+	"golang.org/x/term"
 )
 
 // JobConfig A **job** resource uses an `image`_ to run a job in a container.
 //
-// A **job** resource that doesn't have an ``artifact`` is never considered
-// up-to-date and will always run.  If a job resource has an ``artifact``
+// A **job** resource that doesn't have an “artifact“ is never considered
+// up-to-date and will always run.  If a job resource has an “artifact“
 // the job will be skipped if the artifact is newer than the source.
-// The last modified time of the ``artifact`` files is compared against the
-// last modified time of the files in ``sources``, or if ``sources`` is left
-// unset, the last modified time of the ``use`` image and all the files in
-// the ``mounts``.
+// The last modified time of the “artifact“ files is compared against the
+// last modified time of the files in “sources“, or if “sources“ is left
+// unset, the last modified time of the “use“ image and all the files in
+// the “mounts“.
 //
-// ``mounts`` are provided to the container as bind mounts. If the ``DOBI_NO_BIND_MOUNT``
-// environment variable, or `--no-bind-mount` flag is set, then ``mounts``
+// “mounts“ are provided to the container as bind mounts. If the “DOBI_NO_BIND_MOUNT“
+// environment variable, or `--no-bind-mount` flag is set, then “mounts“
 // will be copied into the container, and all artifacts will be copied out of the
 // container to the host after the job is complete.
 //
-// The `image`_ specified in ``use`` and any `mount`_ resources listed in
-// ``mounts`` are automatically added as dependencies and will always be
+// The `image`_ specified in “use“ and any `mount`_ resources listed in
+// “mounts“ are automatically added as dependencies and will always be
 // created first.
 //
 // name: job
-// example: Run a container using the ``builder`` image to compile some source
-// code to ``./dist/app-binary``.
+// example: Run a container using the “builder“ image to compile some source
+// code to “./dist/app-binary“.
 //
 // .. code-block:: yaml
 //
-//     job=compile:
-//         use: builder
-//         mounts: [source, dist]
-//         artifact: dist/app-binary
-//
+//	job=compile:
+//	    use: builder
+//	    mounts: [source, dist]
+//	    artifact: dist/app-binary
 type JobConfig struct {
 	// Use The name of an `image`_ resource. The referenced image is used
 	// to created the container for the **job**.
@@ -238,16 +237,16 @@ func (s *ShlexSlice) TransformConfig(raw reflect.Value) error {
 	return nil
 }
 
-func jobFromConfig(name string, values map[string]interface{}) (Resource, error) {
-	isTerminal := terminal.IsTerminal(int(os.Stdin.Fd()))
-	cmd := &JobConfig{}
-	if isTerminal {
-		if _, ok := values["interactive"]; !ok {
-			values["interactive"] = true
-		}
-	}
-	return cmd, configtf.Transform(name, values, cmd)
-}
+// func jobFromConfig(name string, values map[string]interface{}) (Resource, error) {
+// 	isTerminal := terminal.IsTerminal(int(os.Stdin.Fd()))
+// 	cmd := &JobConfig{}
+// 	if isTerminal {
+// 		if _, ok := values["interactive"]; !ok {
+// 			values["interactive"] = true
+// 		}
+// 	}
+// 	return cmd, configtf.Transform(name, values, cmd)
+// }
 
 func init() {
 	RegisterResource("job", jobFromConfig)

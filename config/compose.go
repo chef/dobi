@@ -9,26 +9,25 @@ import (
 	pth "github.com/dnephin/configtf/path"
 )
 
-// ComposeConfig A **compose** resource runs ``docker-compose`` to create an
+// ComposeConfig A **compose** resource runs “docker-compose“ to create an
 // isolated environment. The **compose** resource keeps containers running
 // until **dobi** exits so the containers can be used by other tasks that depend
 // on the **compose** resource, or are listed after it in an `alias`_.
 //
 // .. note::
 //
-//     `Docker Compose <https://github.com/docker/compose>`_ must be installed
-//     and available in ``$PATH`` to use this resource.
+//	`Docker Compose <https://github.com/docker/compose>`_ must be installed
+//	and available in ``$PATH`` to use this resource.
 //
 // name: compose
-// example: Start a Compose environment setting the project name to ``web-devenv``
+// example: Start a Compose environment setting the project name to “web-devenv“
 // and using two Compose files.
 //
 // .. code-block:: yaml
 //
-//     compose=devenv:
-//         files: [docker-compose.yml, docker-compose-dev.yml]
-//         project: 'web-devenv'
-//
+//	compose=devenv:
+//	    files: [docker-compose.yml, docker-compose-dev.yml]
+//	    project: 'web-devenv'
 type ComposeConfig struct {
 	// Files The Compose files to use. This field supports :doc:`variables`.
 	// type: list of filenames
